@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NorthWind.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,22 @@ namespace NorthWind.Win
         public frmDocumento()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Boton mostrar formuluario Cleintes
+            frmCliente ofrmCliente = new frmCliente();
+            ofrmCliente.OnClienteSeleccionado += new EventHandler<Entity.TbClienteBE>(MetodoCliente);
+            ofrmCliente.Show();
+        }
+        TbClienteBE otmpCliente; //Variable Temporal
+        void MetodoCliente(object sender, TbClienteBE e)
+        {
+            txtcliente.Text = e.Nombre;
+            txtruc.Text = e.Apellido;
+            otmpCliente = e;
+
         }
     }
 }
