@@ -44,18 +44,19 @@ namespace NorthWind.Win
             this.Close();
         }
 
-        private void button1_Click(object sender, KeyEventArgs e)
-        {
-            //Boton agrgar
-            AgregarClienteFactura();
-        }
-
+       
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData ==Keys.Return)
             {
                 AgregarClienteFactura();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Boton agrgar
+            AgregarClienteFactura();
         }
     }
 }

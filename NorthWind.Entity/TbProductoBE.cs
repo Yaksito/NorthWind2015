@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NorthWind.Entity
 {
-    public class TbProductoBE
+    public class TbProductoBE : EventArgs  //Para que una clase como argumento de EVENTO. HERENCIA EN C#
     {
         //Creamos las propiedades
         public int CodProducto { get; set; }
